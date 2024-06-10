@@ -21,9 +21,9 @@ namespace didaticos.redimensionador
         static void Redimensionar()
         {
             #region "Diretorios"
-            string diretorioEntrada = "C:\\Users\\55119\\source\\repos\\didaticos.redimensionador\\didaticos.redimensionador\\arquivosEntrada";
-            string diretorioRedimensionado = "C:\\Users\\55119\\source\\repos\\didaticos.redimensionador\\didaticos.redimensionador\\arquivosFinalizados";
-            string diretorioFinalizado = "C:\\Users\\55119\\source\\repos\\didaticos.redimensionador\\didaticos.redimensionador\\arquivosRedimensionados";
+            string diretorioEntrada = "C:\\seu camminho aq\\arquivosEntrada";
+            string diretorioRedimensionado = "C:\\seu camminho aq\\arquivosFinalizados";
+            string diretorioFinalizado = "C:\\seu camminho aq\\arquivosRedimensionados";
 
             if (!Directory.Exists(diretorioEntrada))
             {
@@ -79,7 +79,7 @@ namespace didaticos.redimensionador
             // Proporção desejada 16:9
             double proporcaoDesejada = 16.0 / 9.0;
 
-            // Calcular a nova largura e altura mantendo a proporção 16:9
+            // Calcula a nova largura e altura mantendo a proporção 16:9
             int larguraCalculada = larguraFinal;
             int alturaCalculada = (int)(larguraCalculada / proporcaoDesejada);
 
@@ -89,7 +89,7 @@ namespace didaticos.redimensionador
                 larguraCalculada = (int)(alturaCalculada * proporcaoDesejada);
             }
 
-            // Redimensionar a imagem mantendo a proporção 16:9
+            // Redimensiona a imagem mantendo a proporção 16:9
             Bitmap imagemRedimensionada = new Bitmap(larguraCalculada, alturaCalculada);
             using (Graphics g = Graphics.FromImage(imagemRedimensionada))
             {
@@ -100,7 +100,7 @@ namespace didaticos.redimensionador
                 g.DrawImage(imagem, 0, 0, larguraCalculada, alturaCalculada);
             }
 
-            // Criar uma imagem final com o tamanho exato 214x120 e fundo transparente
+            // Cria uma imagem final com o tamanho exato 214x120 e fundo transparente
             Bitmap imagemFinal = new Bitmap(larguraFinal, alturaFinal, PixelFormat.Format32bppArgb);
             using (Graphics g = Graphics.FromImage(imagemFinal))
             {
